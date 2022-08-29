@@ -25,11 +25,4 @@ form {
     width: 100%;
     justify-content: space-between;
 }
-form button {
-    margin-top: 10%;
-    border-radius: 5px;
-    padding: 5%;
-    transition: all 0.5s;
-}form button:active {
-    transform: scale(.9);
-}
+

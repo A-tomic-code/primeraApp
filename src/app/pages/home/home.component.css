@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
 
-    background-color: var(--background-dark-secondary);
     width: 100vw;
     height: 100vh;
 
@@ -16,11 +15,21 @@
     align-items: center;
     width: 30vw;
     height: 250px;
-    border: 5px dashed whitesmoke;
 }
 
 .card p {
     color: white;
     font-size: 150%;
     text-align: center;
+}
+
+.fade_in{
+    animation: fade_in 1.5s ease-in-out 0s 4 forwards;
+}
+
+@keyframes fade_in {
+    to{
+        opacity: 1;
+        transform: scale(1.3);
+    }
 }

@@ -1,12 +1,18 @@
 :root{
-    --background-dark: #414141;
+    --background-dark: #39393938;
     --background-dark-secondary: rgb(93, 98, 99);
     --header-height: 10vh;
+    --footer-height: 5vh;
+
 }
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
+}
+body{
+    background: url(assets/img/background.jpg);
+    background-size: cover;
 }
 input, button{
     background: transparent;
@@ -26,4 +32,13 @@ input, button{
 input{
     padding-left: 10%;
 
+}
+
+button {
+    margin-top: 10%;
+    border-radius: 5px;
+    padding: 5%;
+    transition: all 0.5s;
+}button:active {
+    transform: scale(.9);
 }
