@@ -1,0 +1,25 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--background-dark-secondary);
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 250px;
+    border: 5px dashed whitesmoke;
+}
+
+.card p {
+    color: white;
+    font-size: 150%;    
+}
