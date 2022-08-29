@@ -1,7 +1,7 @@
 :root{
     --background-dark: #414141;
     --background-dark-secondary: rgb(93, 98, 99);
-    --header-height: 100px;
+    --header-height: 10vh;
 }
 *{
     margin:0;
@@ -10,11 +10,20 @@
 }
 input, button{
     background: transparent;
+
     border:none;
-    border-bottom: 1px solid gray;
-    border-radius: 10px 0px 10px 0px;
+    border: 1px solid #ffffff;
+    border-radius: 30px 15px 40px 40px;
+
     padding: 5%;
+    margin-bottom: 10px;
+
     color: antiquewhite;
     outline: none;
+
+}
+
+input{
+    padding-left: 10%;
 
 }

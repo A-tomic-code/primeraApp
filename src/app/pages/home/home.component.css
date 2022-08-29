@@ -21,5 +21,6 @@
 
 .card p {
     color: white;
-    font-size: 150%;    
+    font-size: 150%;
+    text-align: center;
 }
