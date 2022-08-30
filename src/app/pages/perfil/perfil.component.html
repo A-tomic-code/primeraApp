@@ -4,23 +4,24 @@
         <div class="display">
 
             <div class="image-wrapper">
-
+                <img src="{{usuario.imagen}}">
             </div>
 
             <div class="profile-data">
+
                 <div class="profile-data__item">
                     <p>Nombre</p>
-                    <input type="text" disabled>
+                    <input type="text" value="{{usuario.nombre}}" disabled>
                 </div>
                 
                 <div class="profile-data__item">
                     <p>Apellidos</p>
-                    <input type="text" disabled>
+                    <input type="text" value="{{usuario.apellidos}}" disabled>
                 </div>
                 
                 <div class="profile-data__item">
                     <p>Correo</p>
-                    <input type="text" disabled>
+                    <input type="text" value="{{usuario.correo}}" disabled>
                 </div>
 
             </div>
@@ -29,12 +30,12 @@
         <div class="form-wrapper">
             <h1>Editar los datos</h1>
             <form class="form">
-                <input type="text" placeholder="Nombre" id="">
-                <input type="text" placeholder="Apellidos" id="">
-                <input type="text" placeholder="Correo" id="">
-                <input type="text" placeholder="Imagen" id="">
+                <input type="text" placeholder="Nombre" #nombre>
+                <input type="text" placeholder="Apellidos" #apellidos>
+                <input type="text" placeholder="Correo" #correo>
+                <input type="text" placeholder="Imagen" #imagen>
 
-                <button type="button">Editar</button>
+                <button type="button" on-click="getUser(nombre, apellidos, correo, imagen)">Editar</button>
             </form>
         </div>
 

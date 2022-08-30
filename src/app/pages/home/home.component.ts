@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
   
   ngAfterViewInit(): void {
-    let cosas = ['Bienvenido', 'a mi primer proyecto', 'en angular']
+    let cosas = ['Bienvenido', 'a mi primer proyecto', 'en Angular']
     let timer_counter = 0
 
     let timer = setInterval( () =>{
