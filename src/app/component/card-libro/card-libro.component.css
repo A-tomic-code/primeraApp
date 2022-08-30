@@ -1,0 +1,24 @@
+.main{
+    display: flex;
+    height: 9%;
+}
+
+.image-wrapper{
+    width: 140px;
+    height: 140px;
+
+    border-radius: 30% 70% 70% 30% / 30% 38% 62% 70% ;
+    border: 1px solid white;
+
+    margin: 3%;
+    padding: 2%;
+}
+
+.image-wrapper img{
+    width: 90%;
+}
+
+.fields{
+    display: flex;
+    flex-direction: column;
+}

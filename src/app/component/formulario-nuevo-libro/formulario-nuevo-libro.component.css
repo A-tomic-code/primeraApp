@@ -1,12 +1,18 @@
-form {
+.main{
+    /* height: 100%; */
+}
+.form{
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
-}
-.form_buttons{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+
 }
 
+.form .buttons{
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+}

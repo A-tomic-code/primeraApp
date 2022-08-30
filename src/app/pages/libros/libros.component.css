@@ -1,0 +1,30 @@
+.content{
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 3%;
+
+    height: 100%;
+    
+}
+
+.libros{
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 2%;
+
+    
+    width: 100%;
+    height: 100%;
+    
+}
+
+.libros-wrapper{
+    margin-left: 5%;
+    overflow-x: scroll;
+}

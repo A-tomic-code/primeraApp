@@ -9,6 +9,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormularioRegistroComponent } from './component/formulario-registro/formulario-registro.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { LibrosComponent } from './pages/libros/libros.component';
+import { FormularioNuevoLibroComponent } from './component/formulario-nuevo-libro/formulario-nuevo-libro.component';
+import { CardLibroComponent } from './component/card-libro/card-libro.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     FormularioRegistroComponent,
     RegistroComponent,
     PerfilComponent,
+    LibrosComponent,
+    FormularioNuevoLibroComponent,
+    CardLibroComponent,
   ],
   imports: [
     BrowserModule,
