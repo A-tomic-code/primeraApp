@@ -12,6 +12,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { LibrosComponent } from './pages/libros/libros.component';
 import { FormularioNuevoLibroComponent } from './component/formulario-nuevo-libro/formulario-nuevo-libro.component';
 import { CardLibroComponent } from './component/card-libro/card-libro.component';
+import { ReferenciaPipe } from './pipes/referencia.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CardLibroComponent } from './component/card-libro/card-libro.component'
     LibrosComponent,
     FormularioNuevoLibroComponent,
     CardLibroComponent,
+    ReferenciaPipe,
   ],
   imports: [
     BrowserModule,
