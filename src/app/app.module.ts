@@ -13,6 +13,8 @@ import { LibrosComponent } from './pages/libros/libros.component';
 import { FormularioNuevoLibroComponent } from './component/formulario-nuevo-libro/formulario-nuevo-libro.component';
 import { CardLibroComponent } from './component/card-libro/card-libro.component';
 import { ReferenciaPipe } from './pipes/referencia.pipe';
+import { EditarLibroComponent } from './pages/editar-libro/editar-libro.component';
+import { NuevoLibroComponent } from './pages/nuevo-libro/nuevo-libro.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ReferenciaPipe } from './pipes/referencia.pipe';
     FormularioNuevoLibroComponent,
     CardLibroComponent,
     ReferenciaPipe,
+    EditarLibroComponent,
+    NuevoLibroComponent,
   ],
   imports: [
     BrowserModule,

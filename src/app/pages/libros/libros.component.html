@@ -1,33 +1,25 @@
 <main class="page">
 
     <div class="content">
-        <form class="card form">
-            <input type="text" placeholder="ID Libro" #idLibro>
-            <input type="text" placeholder="ID Usuario" #idUsuario>
-            <input type="text" placeholder="Título" #titulo>
-            <input type="text" placeholder="Tipo de libro" #tipo>
-            <input type="text" placeholder="Autor" #autor>
-            <input type="text" placeholder="Precio" #precio>
-            <input type="text" placeholder="Foto" #foto>
-    
-            <div class="buttons">
-                <button type="button" (click)="addLibro(idLibro, idUsuario, titulo, tipo, autor, precio, foto)">Crear libro</button>
-                <button type="reset">Cancelar</button>
-            </div>
-        </form>
+
+        <input type="text" class="search" placeholder="Buscar..." (keyup)="buscar(search)" #search>
         
          <div class="libros-wrapper"> <!--NECESARIO PARA EL SCROLL -->
-
             <div class="libros">
 
-                <ng-container *ngIf="libros.length === 0">
+                <ng-container *ngIf="librosService.libros.length === 0">
 
                     <h1 class="no-books">No hay libros</h1>
                 </ng-container>
 
                 <ng-container *ngFor="let libro of libros; let even = even">
                     
-                    <div class="card card-libro">
+                    <div class="card card-libro" *ngIf="libros[0]" >
+
+                        <div class="eliminar-wrapper">                            
+                            <div class="eliminar" (click)="librosService.delete(libro.id_libro)">X</div>
+                        </div>
+
 
                         <div class="book-data">
                             
@@ -46,7 +38,7 @@
                         
                         <p class="id" [ngClass]="even ? 'id_style1' : 'id_style2'">
                                ID Usuario: {{libro.id_usuario}}        
-                       </p>
+                        </p>
 
                        <p class="id" [ngClass]="even ? 'id_style2' : 'id_style1'">
                         Ref: {{libro.id_libro | referencia}}

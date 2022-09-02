@@ -10,17 +10,23 @@
 }
 
 .nav{
-    padding-left: 2%;
-    padding-right: 2%;
+    /* padding-left: 2%; */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 100px;
+   
 }
 .nav__link-group{
     display: flex;
+    justify-content: flex-end;
     align-items: center;
+
+    gap: 2%;
+
     height: 100%;
-    margin-right: 2%;
+    width: 50%;
+
 }
 .nav__title{
     font-size: 200%;
@@ -30,17 +36,18 @@
 .nav__link{
     display: flex;
     align-items: center;
+
     height: 100%;
+    width: fit-content;
+
     font-size: 120%;
     padding: 1%;
-    padding-left:2%;
     border-bottom: 1px solid var(--background-dark);
     color: #ffffff;
     text-decoration: none;
+
 }
-.nav__link{
-    margin-right: 5px;
-}
+
 .nav__link:hover{
    border-bottom: 1px solid gray;
 }

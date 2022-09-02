@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Libro } from 'src/app/models/libro';
+import { LibrosService } from 'src/app/shared/libros.service';
 
 @Component({
   selector: 'app-libros',
@@ -10,20 +11,23 @@ export class LibrosComponent implements OnInit {
 
   public libros: Libro[];
 
-  constructor() { 
-    this.libros = []
+  constructor(public librosService : LibrosService) {
+    this.libros = librosService.libros;
   }
 
-  addLibro(idLibro : HTMLInputElement, idUsuario : HTMLInputElement, titulo : HTMLInputElement, 
-    tipo : HTMLInputElement, autor : HTMLInputElement, precio : HTMLInputElement, 
-    foto : HTMLInputElement) {
-    
-      let libro = new Libro(titulo.value, tipo.value, autor.value, Number(precio.value),
-         foto.value, Number(idLibro.value), Number(idUsuario.value))
+  buscar(search : HTMLInputElement): void{
 
-         console.log(libro)
-    
-      this.libros.push(libro)
+    console.log(Number(search.value))
+
+    if(search.value.length > 0){
+
+      this.libros = this.librosService.getOne( Number(search.value) )
+
+    }else{
+
+      this.libros = this.librosService.getAll()
+
+    }
   }
 
   ngOnInit(): void {

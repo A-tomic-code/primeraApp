@@ -1,0 +1,23 @@
+<main class="page">
+
+    <div class="content">
+
+        <form class="card form">
+            <input type="text" placeholder="ID Libro" #idLibro>
+            <input type="text" placeholder="ID Usuario" #idUsuario>
+            <input type="text" placeholder="Título" #titulo>
+            <input type="text" placeholder="Tipo de libro" #tipo>
+            <input type="text" placeholder="Autor" #autor>
+            <input type="text" placeholder="Precio" #precio>
+            <input type="text" placeholder="Foto" #foto>
+    
+            <div class="buttons">
+                <button type="button" (click)="addLibro(idLibro, idUsuario, titulo, tipo, autor, precio, foto)">Crear libro</button>
+                <button type="reset">Cancelar</button>
+            </div>
+        </form>
+
+    </div>
+
+</main>
+
