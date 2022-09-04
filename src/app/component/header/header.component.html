@@ -1,11 +1,26 @@
 <header class="header nav">
+
     <p class="nav__title">Proyecto Angular</p>
+
     <div class="nav__link-group">
-        <a class="nav__link" routerLink="">Home</a>
-        <a class="nav__link" routerLink="registro" >Registro</a>
-        <a class="nav__link" routerLink="perfil">Perfil</a>
-        <a class="nav__link" routerLink="libros">Libros</a>
+
+        <ng-container *ngIf="!usuarioService.logeado">
+
+            <a class="nav__link" routerLink="">Home</a>
+            <a class="nav__link" routerLink="login">Login</a>
+            <a class="nav__link" routerLink="registro" >Registro</a>
+
+        </ng-container>
+
+        <ng-container *ngIf="usuarioService.logeado">
+
+            <a class="nav__link" routerLink="perfil">Perfil</a>
+            <a class="nav__link" routerLink="libros">Libros</a>
+
+        </ng-container>
+        
         <a class="nav__link" routerLink="editarLibro">Editar libro</a>
         <a class="nav__link" routerLink="nuevoLibro">Nuevo libro</a>
+
     </div>
 </header>

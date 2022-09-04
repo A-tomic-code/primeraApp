@@ -1,12 +1,27 @@
 form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+
 }
 .form_buttons{
     display: flex;
     width: 100%;
     justify-content: space-between;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+    padding: 5%;
+    height: 500px;
 }
 

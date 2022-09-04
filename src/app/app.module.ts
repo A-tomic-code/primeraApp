@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { CardLibroComponent } from './component/card-libro/card-libro.component'
 import { ReferenciaPipe } from './pipes/referencia.pipe';
 import { EditarLibroComponent } from './pages/editar-libro/editar-libro.component';
 import { NuevoLibroComponent } from './pages/nuevo-libro/nuevo-libro.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +33,12 @@ import { NuevoLibroComponent } from './pages/nuevo-libro/nuevo-libro.component';
     ReferenciaPipe,
     EditarLibroComponent,
     NuevoLibroComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

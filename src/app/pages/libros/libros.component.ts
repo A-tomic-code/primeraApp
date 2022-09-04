@@ -1,36 +1,53 @@
 import { Component, OnInit } from '@angular/core';
+import { response } from 'express';
 import { Libro } from 'src/app/models/libro';
 import { LibrosService } from 'src/app/shared/libros.service';
 
 @Component({
   selector: 'app-libros',
   templateUrl: './libros.component.html',
-  styleUrls: ['./libros.component.css']
+  styleUrls: ['./libros.component.css'],
 })
 export class LibrosComponent implements OnInit {
+  public libros: Libro[] = [];
 
-  public libros: Libro[];
-
-  constructor(public librosService : LibrosService) {
-    this.libros = librosService.libros;
+  constructor(public librosService: LibrosService) {
+    librosService.getAll().subscribe((response: any) => {
+      this.libros = response.data;
+    });
   }
 
-  buscar(search : HTMLInputElement): void{
+  buscar(search: HTMLInputElement): void {
+    console.log(Number(search.value));
 
-    console.log(Number(search.value))
+    if (search.value.length > 0) {
 
-    if(search.value.length > 0){
+      this.librosService.getOne(Number(search.value)).subscribe((response: any) => {
+          this.libros = response.data;
+        });
 
-      this.libros = this.librosService.getOne( Number(search.value) )
+    } else {
 
-    }else{
+      this.librosService.getAll().subscribe((response: any) => {
+        
+        this.libros = response.data;
+        console.log(response.data);
 
-      this.libros = this.librosService.getAll()
-
+      });
     }
   }
 
-  ngOnInit(): void {
+  borrar(id_libro: number) {
+
+    this.librosService.delete(id_libro).subscribe((response: any) => {
+      console.log(response);
+
+    });
+
+    this.librosService.getAll().subscribe((response: any) => {
+      this.libros = response.data;
+    });
   }
 
+  ngOnInit(): void {}
 }

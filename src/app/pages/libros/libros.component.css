@@ -2,16 +2,16 @@
     display: flex;
     flex-direction: column;
     
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
     padding: 3%;
 
-    height: 100%;
+    height: 80vh;
 }
 
 .search{
-    height: 10px;
+    height: 40px;
     width: 40%;
 
     padding: 1%
@@ -33,13 +33,16 @@
 }
 
 .libros-wrapper{
-    display: flex;;
+    
+    display: flex;
+    flex-direction: column;
 
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-start;
     
     width: 95vw;
-    height: 70vh;
+    height: 75%;
+
 }
 
 .card-libro{

@@ -1,14 +1,18 @@
 <main class="card">
-    <form>
-        <input type="text" placeholder="Nombre" id="">
-        <input type="text" placeholder="Apellido" id="">
-        <input type="text" placeholder="Email" id="">
-        <input type="text" placeholder="URL" id="">
-        <input type="password" placeholder="Password" id="">
-        <input type="password" placeholder="Password" id="">
+    <h1>Regístrate</h1>
 
+    <form>
+        <div class="inputs">
+            <input type="text" placeholder="Nombre" #nombre>
+            <input type="text" placeholder="Apellidos" #apelldos>
+            <input type="text" placeholder="Email" #correo>
+            <input type="text" placeholder="Imagen" #photo>
+            <input type="password" placeholder="Password" #password1>
+            <input type="password" placeholder="Password" #password2>
+        </div>
+            
         <div class="form_buttons">
-            <button type="button">Registrarse</button>
+            <button type="button" (click)="register(nombre, apelldos, correo, photo, password1, password2)">Registrarse</button>
             <button type="reset">Cancelar</button>
         </div>
     </form>

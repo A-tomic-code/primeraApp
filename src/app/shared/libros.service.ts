@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Libro } from '../models/libro';
 
 @Injectable({
@@ -9,64 +11,35 @@ export class LibrosService {
 
   public libros: Libro[] = [];
 
-  constructor() { }
+  private url = 'http://localhost:5555/libros';
 
-  getAll(): Libro[] {
-    return this.libros
+  constructor(private http:HttpClient) { }
+
+  getAll() {
+    return this.http.get(this.url)
   }
 
-  getOne(id_libro: number): Libro[]{
-    let found = false;
-    let i = 0;
+  getOne(id_libro: number){
+    return this.http.get(this.url + `?id=${id_libro}`)
+  }
 
-    while(!found && i < this.libros.length){
-      
-      if(this.libros[i].id_libro == id_libro){
-        found = true;
-        break;
-      }
-      
-      i++;
+  add(libro: Libro){
+    return this.http.post(this.url, libro)
+  }
+
+  edit(libro: Libro){
+    return this.http.put(this.url, libro)
+  }
+
+  delete(id_libro: number){
+    console.log(id_libro);
+
+    let options = {
+      headers : new HttpHeaders({'content-type' : 'application/json'}),
+      body : {id : id_libro}
     }
 
-    // let result = [ new Libro(this.libros[i].titulo, this.libros[i].tipo, this.libros[i].autor,
-    //   this.libros[i].precio, this.libros[i].photo, this.libros[i].id_libro,
-    //   this.libros[i].id_usuario) ];
-
-    let result: Libro[] = [ this.libros[i] ]
-    console.log(result)
-
-    return result
-  }
-
-  add(libro: Libro): void{
-    this.libros.push(libro)
-  }
-
-  edit(libro: Libro): Boolean{
-    let result: Boolean = false;
-
-    let i = this.libros.findIndex( (element) => element.id_libro === libro.id_libro);
-    
-    if(i != -1){
-      this.libros[i] = libro;
-      result = true;
-    }
-
-    return result;
-  }
-
-  delete(id_libro: number): Boolean{
-    let result: Boolean = false;
-
-    let i = this.libros.findIndex( (element) => element.id_libro === id_libro)
-    
-    if(i != -1){
-      this.libros.splice(i, 1);
-      result = true
-    }
-
-    return result
+    return this.http.delete(this.url, options)
   }
 
 }

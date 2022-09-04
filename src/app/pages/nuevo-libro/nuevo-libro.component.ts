@@ -16,8 +16,15 @@ export class NuevoLibroComponent implements OnInit {
     foto : HTMLInputElement) {
     
       let libro = new Libro(titulo.value, tipo.value, autor.value, Number(precio.value),
-         foto.value, Number(idLibro.value), Number(idUsuario.value))
-      this.librosService.add(libro)
+         foto.value, -1, Number(idUsuario.value))
+
+      this.librosService.add(libro).subscribe( (response:any) => {
+
+        console.log(response)
+
+        idLibro.value = response.data.insertId
+        
+      })
   }
 
 

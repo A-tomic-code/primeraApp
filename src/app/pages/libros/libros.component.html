@@ -7,7 +7,7 @@
          <div class="libros-wrapper"> <!--NECESARIO PARA EL SCROLL -->
             <div class="libros">
 
-                <ng-container *ngIf="librosService.libros.length === 0">
+                <ng-container *ngIf="libros.length === 0">
 
                     <h1 class="no-books">No hay libros</h1>
                 </ng-container>
@@ -17,7 +17,7 @@
                     <div class="card card-libro" *ngIf="libros[0]" >
 
                         <div class="eliminar-wrapper">                            
-                            <div class="eliminar" (click)="librosService.delete(libro.id_libro)">X</div>
+                            <div class="eliminar" (click)="borrar(libro.id_libro)">X</div>
                         </div>
 
 

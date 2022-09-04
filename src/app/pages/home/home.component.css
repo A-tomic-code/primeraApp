@@ -24,7 +24,8 @@
 }
 
 .fade_in{
-    animation: fade_in 1.5s ease-in-out 0s 4 forwards;
+    animation: fade_in 1.5s ease-in-out 0s 3 forwards;
+
 }
 
 @keyframes fade_in {

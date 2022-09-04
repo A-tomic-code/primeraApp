@@ -21,7 +21,9 @@ export class EditarLibroComponent implements OnInit {
 
     console.log(libro);
 
-    this.librosService.edit(libro)
+    this.librosService.edit(libro).subscribe( (response:any) => {
+      console.log(response)
+    });
       
   }
 

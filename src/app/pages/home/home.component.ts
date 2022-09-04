@@ -16,12 +16,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     let cosas = ['Bienvenido', 'a mi primer proyecto', 'en Angular']
     let timer_counter = 0
+    
+    this.txt.nativeElement.innerText = cosas[timer_counter]
+
 
     let timer = setInterval( () =>{
-      this.txt.nativeElement.innerText = cosas[timer_counter];
       timer_counter++;
+      this.txt.nativeElement.innerText = cosas[timer_counter];
 
-      if(timer_counter>=cosas.length){
+      if(timer_counter > (cosas.length - 2)){
         console.log('cierro')
         clearInterval(timer)
       }

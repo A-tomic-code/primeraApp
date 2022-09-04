@@ -5,6 +5,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { EditarLibroComponent } from './pages/editar-libro/editar-libro.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LibrosComponent } from './pages/libros/libros.component';
+import { LoginComponent } from './pages/login/login.component';
 import { NuevoLibroComponent } from './pages/nuevo-libro/nuevo-libro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { RegistroComponent } from './pages/registro/registro.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'libros', component: LibrosComponent },
   { path: 'editarLibro', component: EditarLibroComponent },
   { path: 'nuevoLibro', component: NuevoLibroComponent },
+  { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent },
 ];
 
