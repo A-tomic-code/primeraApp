@@ -4,6 +4,8 @@ form {
     justify-content: flex-start;
     align-items: center;
 
+    width: 100%;
+
 }
 
 .inputs{
@@ -14,7 +16,7 @@ form {
 .form_buttons{
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .card{

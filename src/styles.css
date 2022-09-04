@@ -45,7 +45,7 @@ input {
 
 button {
   margin-top: 10%;
-  border-radius: 5px;
+  border-radius: 15px 7px 25px 15px;
   padding: 5%;
   transition: all 0.5s, background-color 1s;
 }
