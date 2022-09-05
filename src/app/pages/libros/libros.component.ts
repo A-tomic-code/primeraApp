@@ -40,13 +40,15 @@ export class LibrosComponent implements OnInit {
   borrar(id_libro: number) {
 
     this.librosService.delete(id_libro).subscribe((response: any) => {
+      
       console.log(response);
 
+      this.librosService.getAll().subscribe((response: any) => {
+        this.libros = response.data;
+      });
+      
     });
 
-    this.librosService.getAll().subscribe((response: any) => {
-      this.libros = response.data;
-    });
   }
 
   ngOnInit(): void {}
