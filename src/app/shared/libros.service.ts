@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Libro } from '../models/libro';
+import { UsuarioService } from './usuario.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +14,15 @@ export class LibrosService {
 
   private url = 'http://localhost:5555/libros';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, public usuarioService: UsuarioService) { }
 
   getAll() {
-    return this.http.get(this.url)
+    return this.http.get(this.url + '?id_usuario=' + this.usuarioService.usuario.id)
   }
 
   getOne(id_libro: number){
-    return this.http.get(this.url + `?id=${id_libro}`)
+    let id_usuario = this.usuarioService.usuario.id;
+    return this.http.get(this.url + `?id_libro=${id_libro}&id_usuario=${id_usuario}`)
   }
 
   add(libro: Libro){
