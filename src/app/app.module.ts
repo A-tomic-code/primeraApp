@@ -17,6 +17,8 @@ import { ReferenciaPipe } from './pipes/referencia.pipe';
 import { EditarLibroComponent } from './pages/editar-libro/editar-libro.component';
 import { NuevoLibroComponent } from './pages/nuevo-libro/nuevo-libro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { LoginComponent } from './pages/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,10 +2,27 @@
     
     <div class="content">
         
-        <form class="card">
-            <input type="text" placeholder="Nombre" #nombre>
-            <input type="password" placeholder="Password" #password>
-            <button type="button" (click)="login(nombre, password)">Login</button>
+        
+        <form class="tarjeta" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+            <h1>Login</h1>
+            
+            <input name='nombre' type="text" placeholder="Nombre" 
+            [ngClass]="{'is-invalid': nombre.touched && nombre.invalid}" required [(ngModel)]="user.nombre" #nombre="ngModel">
+
+            <div class="invalid-feedback" *ngIf="nombre.invalid">
+                <p *ngIf="nombre.errors.required">Debes introducir un nombre</p>
+            </div>
+
+
+            <input name='password' [(ngModel)]="user.password" type="password" [ngClass]="{'is-invalid' : password.touched && password.invalid}"
+                placeholder="Password"  required minlength="2" #password="ngModel">
+
+            <div class="invalid-feedback" *ngIf="password.invalid">
+                <p *ngIf="password.errors.required">El password no puede estar vacio</p>
+                <p *ngIf="password.errors.minlength">El password debe tener minimo 2 caracteres</p>
+            </div>
+            
+            <button>Login</button>
         </form>
 
     </div>

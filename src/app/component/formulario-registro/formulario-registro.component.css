@@ -19,11 +19,11 @@ form {
     justify-content: space-around;
 }
 
-.card{
+.tarjeta{
     display: flex;
     flex-direction: column;
     gap: 8%;
     padding: 5%;
-    height: 500px;
+    height: 600px;
 }
 

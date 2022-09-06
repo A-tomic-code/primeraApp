@@ -30,8 +30,6 @@
 }
 .nav__title{
     font-size: 200%;
-    padding: 5%;
-    padding-left:0;
 }
 .nav__link{
     display: flex;

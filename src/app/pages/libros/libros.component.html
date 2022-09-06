@@ -14,7 +14,7 @@
 
                 <ng-container *ngFor="let libro of libros; let even = even">
                     
-                    <div class="card card-libro" *ngIf="libros[0]" >
+                    <div class="tarjeta tarjeta-libro" *ngIf="libros[0]" >
 
                         <div class="eliminar-wrapper">                            
                             <div class="eliminar" (click)="borrar(libro.id_libro)">X</div>

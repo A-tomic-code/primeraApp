@@ -9,7 +9,7 @@
 
 }
 
-.card{
+.tarjeta{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@
     height: 250px;
 }
 
-.card p {
+.tarjeta p {
     color: white;
     font-size: 150%;
     text-align: center;

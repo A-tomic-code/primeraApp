@@ -57,7 +57,7 @@ button:hover{
   color: black;
 }
 
-.card {
+.tarjeta {
   display: flex;
   flex-direction: column;
 

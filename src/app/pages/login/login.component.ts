@@ -11,10 +11,15 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public usuarioService:UsuarioService, private router:Router) { }
+  public user: Usuario
 
-  login(nombre:HTMLInputElement, password:HTMLInputElement){
-    let user = new Usuario(nombre.value,'',password.value, '','');
+  constructor(public usuarioService:UsuarioService, private router:Router)
+     { 
+      this.user = new Usuario(null, null, null, null, null, null)
+     }
+
+  login(nombre:String, password:String){
+    let user = new Usuario(nombre,'',password, '','');
 
     this.usuarioService.login(user).subscribe( (response:any) => {
 
@@ -37,6 +42,11 @@ export class LoginComponent implements OnInit {
       console.log(this.usuarioService.usuario);
 
     });
+  }
+
+  onSubmit(){
+    console.log(this.user)
+    this.login(this.user.nombre, this.user.password);
   }
 
   ngOnInit(): void {
