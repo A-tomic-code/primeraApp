@@ -17,6 +17,10 @@ export class LibrosComponent implements OnInit {
     });
   }
 
+  test(libro:Libro){
+    this.borrar(libro.id_libro)
+  }
+
   buscar(search: HTMLInputElement): void {
     console.log(Number(search.value));
 
@@ -37,13 +41,14 @@ export class LibrosComponent implements OnInit {
     }
   }
 
-  borrar(id_libro: number) {
+  borrar(id_libro: Number) {
 
     this.librosService.delete(id_libro).subscribe((response: any) => {
       
       console.log(response);
 
       this.librosService.getAll().subscribe((response: any) => {
+        
         this.libros = response.data;
       });
       

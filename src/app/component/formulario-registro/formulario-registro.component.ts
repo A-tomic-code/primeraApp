@@ -8,7 +8,12 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
   styleUrls: ['./formulario-registro.component.css'],
 })
 export class FormularioRegistroComponent implements OnInit {
-  constructor(public usuarioService: UsuarioService) {}
+
+  public user:Usuario;
+
+  constructor(public usuarioService: UsuarioService) {
+    this.user = new Usuario(null, null, null, null, null, null);
+  }
 
   register(nombre:HTMLInputElement, apellidos:HTMLInputElement, correo:HTMLInputElement,
     foto:HTMLInputElement, password1:HTMLInputElement, password2:HTMLInputElement) {
@@ -26,6 +31,10 @@ export class FormularioRegistroComponent implements OnInit {
 
         });
       }
+
+    }
+
+    onSubmit(){
 
     }
 

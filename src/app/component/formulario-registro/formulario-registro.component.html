@@ -1,18 +1,46 @@
 <main class="tarjeta">
     <h1>Regístrate</h1>
 
-    <form>
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="inputs">
-            <input type="text" placeholder="Nombre" #nombre>
-            <input type="text" placeholder="Apellidos" #apelldos>
-            <input type="text" placeholder="Email" #correo>
-            <input type="text" placeholder="Imagen" #photo>
-            <input type="password" placeholder="Password" #password1>
-            <input type="password" placeholder="Password" #password2>
-        </div>
-            
+
+            <input name='nombre' type="text" placeholder="Nombre"
+            [ngClass]="{'is-invalid': nombre.touched && nombre.invalid}" required [(ngModel)]="user.nombre" #nombre="ngModel">
+
+            <div class="invalid-feedback" *ngIf="nombre.invalid">
+                <p *ngIf="nombre.errors.required">Debes introducir un nombre</p>
+            </div>
+
+            <input name="apellidos" type="text" placeholder="Apellidos" #apellidos="ngModel" 
+                [(ngModel)]="user.apellidos" [ngClass]="{'is-invalid': apellidos.touched && apellidos.invalid}" required>
+
+            <div class="invalid-feedback" *ngIf="apellidos.invalid">
+                <p *ngIf="apellidos.errors.required">Debes introducir los apellidos</p>
+            </div>
+
+            <input name="email" type="text" placeholder="Email" #correo="ngModel" 
+                [(ngModel)]="user.correo" [ngClass]="{'is-invalid': correo.touched && correo.invalid}" email required>
+
+            <div class="invalid-feedback" *ngIf="correo.invalid">
+                <p *ngIf="correo.errors.required">Debes introducir el email</p>
+                <p *ngIf="correo.errors.email">Debes introducir un email valido</p>
+            </div>
+
+            <input type="text" placeholder="Imagen" #photo="ngModel" [(ngModel)]="user.imagen" required>
+
+            <input name="password1" type="password" placeholder="Password" #password required>
+
+            <input name="password2" type="password" placeholder="Password" #password2="ngModel" 
+                [(ngModel)]="user.password" [ngClass]="{'is-invalid': password2.touched && (password != password2)}" required>
+
+            <div class="invalid-feedback" *ngIf="password2.invalid">
+                <p *ngIf="password2.errors.required">Debes confirmar tu password</p>
+                <!-- <p *ngIf="password2.errors">las contrasenas no coinciden</p> -->
+            </div>
+        </div> 
+
         <div class="form_buttons">
-            <button type="button" (click)="register(nombre, apelldos, correo, photo, password1, password2)">Registrarse</button>
+            <!-- <button type="button" (click)="register(nombre, apelldos, correo, photo, password1, password2)">Registrarse</button> -->
             <button type="reset">Cancelar</button>
         </div>
     </form>

@@ -1,14 +1,33 @@
-<main class="main card">
-   <div class="image-wrapper">
-        <img>
-   </div>
+<main class="main">
+   <div class="tarjeta tarjeta-libro" >
 
-   <div class="fields">
-      <input type="text" disabled>
-      <input type="text" disabled>
-      <input type="text" disabled>
-      <input type="text" disabled>
-      <input type="text" disabled>
-   </div>
-   
+      <div class="eliminar-wrapper">                            
+          <div class="eliminar" (click)="eliminarLibro()"> X </div>
+      </div>
+
+
+      <div class="book-data">
+          
+          <div class="image-wrapper">
+              <img src="{{libro.photo}}" alt="{{libro.photo}}">
+          </div>
+      
+          <div class="fields">
+              <input type="text" disabled value="{{libro.titulo}}">
+              <input type="text" disabled value="{{libro.tipo}}">
+              <input type="text" disabled value="{{libro.autor}}">
+              <input type="text" disabled value="{{libro.precio}}">
+          </div>
+          
+      </div>
+      
+      <p class="id">
+             ID Usuario: {{libro.id_usuario}}        
+      </p>
+
+     <p class="id">
+      {{libro.id_libro | referencia}}
+     </p>
+
+  </div>
 </main>

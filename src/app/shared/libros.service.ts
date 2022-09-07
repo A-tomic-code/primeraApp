@@ -20,7 +20,7 @@ export class LibrosService {
     return this.http.get(this.url + '?id_usuario=' + this.usuarioService.usuario.id)
   }
 
-  getOne(id_libro: number){
+  getOne(id_libro: Number){
     let id_usuario = this.usuarioService.usuario.id;
     return this.http.get(this.url + `?id_libro=${id_libro}&id_usuario=${id_usuario}`)
   }
@@ -33,7 +33,7 @@ export class LibrosService {
     return this.http.put(this.url, libro)
   }
 
-  delete(id_libro: number){
+  delete(id_libro: Number){
     console.log(id_libro);
 
     let options = {

@@ -8,48 +8,14 @@
             <div class="libros">
 
                 <ng-container *ngIf="libros.length === 0">
-
                     <h1 class="no-books">No hay libros</h1>
                 </ng-container>
 
-                <ng-container *ngFor="let libro of libros; let even = even">
-                    
-                    <div class="tarjeta tarjeta-libro" *ngIf="libros[0]" >
-
-                        <div class="eliminar-wrapper">                            
-                            <div class="eliminar" (click)="borrar(libro.id_libro)">X</div>
-                        </div>
-
-
-                        <div class="book-data">
-                            
-                            <div class="image-wrapper">
-                                <img src="{{libro.photo}}" alt="{{libro.photo}}">
-                            </div>
-                        
-                            <div class="fields">
-                                <input type="text" disabled value="{{libro.titulo}}">
-                                <input type="text" disabled value="{{libro.tipo}}">
-                                <input type="text" disabled value="{{libro.autor}}">
-                                <input type="text" disabled value="{{libro.precio}}">
-                            </div>
-                            
-                        </div>
-                        
-                        <p class="id" [ngClass]="even ? 'id_style1' : 'id_style2'">
-                               ID Usuario: {{libro.id_usuario}}        
-                        </p>
-
-                       <p class="id" [ngClass]="even ? 'id_style2' : 'id_style1'">
-                        Ref: {{libro.id_libro | referencia}}
-                       </p>
-
-                    </div>
-
+                <ng-container *ngFor="let libro of libros">
+                    <app-card-libro [libro]="libro" (onDeleteBook)="test($event)"></app-card-libro>  
                 </ng-container>
 
             </div>
-
         </div>
 
         
